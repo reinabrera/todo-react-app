@@ -5,7 +5,7 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 import ACTIONS from "../actions";
 
-const initialState = JSON.parse(localStorage.getItem("notes"));
+const initialState = JSON.parse(localStorage.getItem("notes")) || [];
 
 function reducer(notes, action) {
   switch (action.type) {
