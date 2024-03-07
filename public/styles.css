@@ -8,14 +8,11 @@ html {
 }
 body {
   background: #eee;
-  padding: 0 16px;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 header {
   background-color: #f5ba13;
-  margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
@@ -37,14 +34,27 @@ footer {
 footer p {
   color: #ccc;
 }
+
 .note {
+  padding-left: 16px;
+}
+.note .content-wrapper {
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
   width: 240px;
-  margin: 16px;
   float: left;
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 587px) {
+  .note {
+    width: 100%;
+  }
+  .note .content-wrapper {
+    width: 100%;
+  }
 }
 .note h1 {
   font-size: 1.1em;
@@ -76,7 +86,8 @@ footer p {
 
 form.create-note {
   position: relative;
-  width: 480px;
+  max-width: 480px;
+  width: 100%;
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
@@ -106,4 +117,19 @@ form.create-note button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+.notes-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -16px;
+}
+
+.container {
+  padding: 0 25px;
+  @media screen and (min-width: 1250px) {
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }

@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 import ACTIONS from "../actions";
+import Notes from "./Notes";
 
 const initialState = JSON.parse(localStorage.getItem("notes")) || [];
 
@@ -39,23 +40,14 @@ function App() {
   },[notes]);
 
   return (
-    <div>
+    <>
       <Header />
       <CreateArea dispatch={dispatch} />
-      {notes.map((noteItem, index) => {
-        return (
-          <Note
-            dispatch={dispatch}
-            key={index}
-            id={index}
-            title={noteItem.title}
-            content={noteItem.content}
-            completed={noteItem.completed}
-          />
-        );
-      })}
+      <Notes data={notes} dispatch={dispatch} />
       <Footer />
-    </div>
+    </>
+      
+
   );
 }
 

@@ -40,7 +40,7 @@ function CreateArea({ dispatch }) {
   }
 
   return (
-    <div>
+    <div className="container">
       <form className="create-note">
         {isClicked && (
           <input
